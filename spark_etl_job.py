@@ -96,18 +96,18 @@ df_latest.show(truncate=False)
 
 # COMMAND ----------
 
-# MAGIC %md
-# MAGIC Explanation of spark_etl_job.py:
-# MAGIC
-# MAGIC Step 1: We define a Window Spec to group the data by id and name, and sort by timestamp in descending order.
-# MAGIC
-# MAGIC Step 2: Use the row_number() function to assign a row number to each record within each group.
-# MAGIC
-# MAGIC Step 3: Filter out only the row with the most recent timestamp (row number 1).
-# MAGIC
-# MAGIC Step 4: We use map_from_entries to transform the (name, value) pairs into a MapType for each id.
-# MAGIC
-# MAGIC Step 5: The resulting DataFrame is partitioned by etl_date (current date) and written to Parquet format.
+# 
+# Explanation of spark_etl_job.py:
+# 
+#  Step 1: We define a Window Spec to group the data by id and name, and sort by timestamp in descending order.
+# 
+#  Step 2: Use the row_number() function to assign a row number to each record within each group.
+# 
+# Step 3: Filter out only the row with the most recent timestamp (row number 1).
+# 
+# Step 4: We use map_from_entries to transform the (name, value) pairs into a MapType for each id.
+# 
+ #Step 5: The resulting DataFrame is partitioned by etl_date (current date) and written to Parquet format.
 
 # COMMAND ----------
 
